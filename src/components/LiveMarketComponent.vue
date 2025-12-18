@@ -8,7 +8,6 @@ const coinStore = useCoinsStore();
 
 const sortBy = ref(null);
 
-
 const sortedCoins = computed(() => {
 
   const coins = [...coinStore.coinDataTop50];
@@ -47,13 +46,6 @@ const sortedCoins = computed(() => {
 
     <div class="flex gap-5 mt-[25px]">
       <button
-          @click="sortBy = null"
-          :class="sortBy === null ? 'bg-blue-900' : 'bg-gray-900'"
-          class="px-4 py-2 text-white rounded-lg hover:bg-blue-800 transition-colors"
-      >
-        Sort by Market Cap
-      </button>
-      <button
           @click="sortBy = 'change'"
           :class="sortBy === 'change' ? 'bg-blue-900' : 'bg-gray-900'"
           class="px-4 py-2 text-white rounded-lg hover:bg-blue-800 transition-colors"
@@ -66,6 +58,13 @@ const sortedCoins = computed(() => {
           class="px-4 py-2 text-white rounded-lg hover:bg-blue-800 transition-colors"
       >
         Sort by Volume 24h
+      </button>
+      <button
+          @click="sortBy = null"
+          :class="sortBy === null ? 'bg-blue-900' : 'bg-gray-900'"
+          class="px-4 py-2 text-white rounded-lg hover:bg-blue-800 transition-colors"
+      >
+        Sort Reset
       </button>
     </div>
 
